@@ -25,3 +25,11 @@ This application can be deployed to [Azure Static Web Apps](https://docs.microso
 
 
 https://agreeable-stone-08eb4080f.azurestaticapps.net
+
+# Build a Blazor todo list app
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0&pivots=server
+
+**My Blazor App:**
+https://agreeable-stone-08eb4080f.azurestaticapps.net
+
+
