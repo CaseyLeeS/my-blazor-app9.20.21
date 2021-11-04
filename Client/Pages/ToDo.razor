@@ -1,5 +1,5 @@
-﻿<!-- references the page "todo"-->
-@page "/todo"
+﻿@page "/todo"
+<!-- references the page "todo"-->
 
 <h1>Todo (@todos.Count(todo => !todo.IsDone))</h1><!-- header to show a count of the number of todo items that aren't complete (IsDone is false). '-->
 
@@ -17,7 +17,8 @@
 <input placeholder="Something todo" @bind="newTodo" /><!--text input that binds newTodo with the @bind attribute -->
 <button @onclick="AddTodo">Add todo</button><!--button to add an item to the list w/ an event handler-->
 
-@code { //field for the todo items
+@code {
+//field for the todo items
     private List<TodoItem> todos = new(); // The Todo component uses this field to maintain the state of the todo list.
     private string newTodo; // newToDo string field
    
