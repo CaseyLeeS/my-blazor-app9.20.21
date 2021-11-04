@@ -1,29 +1,31 @@
-﻿@page "/todo"
+﻿<!-- references the page "todo"-->
+@page "/todo"
 
-<h1>Todo (@todos.Count(todo => !todo.IsDone))</h1>
+<h1>Todo (@todos.Count(todo => !todo.IsDone))</h1><!-- header to show a count of the number of todo items that aren't complete (IsDone is false). '-->
 
-<ul>
+<ul><!-- unordered list -->
     @foreach (var todo in todos)
-    {
-        <li>
-            <input type="checkbox" @bind="todo.IsDone" />
-            <input @bind="todo.Title" />
-        </li>
+    {<!-- unordered list markup and a foreach loop to render each todo item as a list item -->
+        <li><!-- list item -->
+            <input type="checkbox" @bind="todo.IsDone" /><!-- create a checkbox to help user keep track of completed items-->
+            <input @bind="todo.Title" /><!-- binds it's value to the IsDone property -->
+        </li><!-- list item -->
     }
-</ul>
+</ul><!-- unordered list -->
 
-<input placeholder="Something todo" @bind="newTodo" />
-<button @onclick="AddTodo">Add todo</button>
+<!--UI elements for adding todo items to the list.-->
+<input placeholder="Something todo" @bind="newTodo" /><!--text input that binds newTodo with the @bind attribute -->
+<button @onclick="AddTodo">Add todo</button><!--button to add an item to the list w/ an event handler-->
 
-@code {
-    private List<TodoItem> todos = new();
-    private string newTodo;
-
-    private void AddTodo()
+@code { //field for the todo items
+    private List<TodoItem> todos = new(); // The Todo component uses this field to maintain the state of the todo list.
+    private string newTodo; // newToDo string field
+   
+    private void AddTodo() // AddToDo method
     {
         if (!string.IsNullOrWhiteSpace(newTodo))
-        {
-            todos.Add(new TodoItem { Title = newTodo });
+        { // Todo: Add the todo
+            todos.Add(new TodoItem { Title = newTodo }); // adding items and title to the list
             newTodo = string.Empty;
         }
     }
